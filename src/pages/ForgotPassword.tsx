@@ -12,7 +12,10 @@ export default function ForgotPassword() {
   };
 
   return (
-    <AuthLayout title="Reset your password" subtitle="Enter your email and we'll send you a reset link.">
+    <AuthLayout
+      title="Reset your password"
+      subtitle="Enter your email and we'll send you a reset link."
+    >
       {sent ? (
         <div className="space-y-6">
           <div className="flex flex-col items-center text-center py-4">
@@ -23,7 +26,8 @@ export default function ForgotPassword() {
               Check your email
             </h3>
             <p className="text-sm text-slate-500 dark:text-slate-400 max-w-sm">
-              We've sent a password reset link to your email address. Please check your inbox and follow the instructions.
+              We've sent a password reset link to your email address. Please check
+              your inbox and follow the instructions.
             </p>
           </div>
           <Link
@@ -36,6 +40,7 @@ export default function ForgotPassword() {
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-5">
+          {/* Email */}
           <div>
             <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
               Email
@@ -51,6 +56,7 @@ export default function ForgotPassword() {
             </div>
           </div>
 
+          {/* Submit */}
           <button
             type="submit"
             className="w-full py-2.5 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 text-white font-semibold text-sm shadow-lg shadow-sky-500/25 hover:shadow-sky-500/40 hover:-translate-y-0.5 transition-all duration-200"
@@ -58,6 +64,7 @@ export default function ForgotPassword() {
             Send Reset Link
           </button>
 
+          {/* Back to login */}
           <Link
             to="/login"
             className="flex items-center justify-center gap-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 transition-colors"
